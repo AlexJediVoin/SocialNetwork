@@ -1,7 +1,7 @@
 import React from "react";
 import {MyPosts} from "./MyPosts/MyPosts";
 import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
-import {addPostCallbackPropsType, PostPageType} from "../../Redux/State";
+import {PostPageType} from "../../Redux/State";
 
 type PostPagePropsType = {
     profilePage: PostPageType

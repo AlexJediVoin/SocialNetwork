@@ -1,7 +1,3 @@
-let onChange = () => {
-
-}
-
 export type PostType = {
     id: number
     message: string
@@ -15,10 +11,6 @@ export type DialogItemPropsType = {
     id: number
     name: string
 }
-// export type DialogsPropsType = {
-//     dialogs: Array<DialogItemPropsType>
-//     messages: Array <MessageDataPropsType>
-// }
 
 export type PostPageType = {
     posts: Array<PostType>
@@ -54,40 +46,47 @@ let PostData: Array<PostType> = [
     {id: 4, message: "It's my first post.", likesCount: 5}
 ]
 
-export const addPost = () => {
-    let newPost: PostType = {
-        id: 5,
-        message: state.postPage.newPostText,
-        likesCount: 0
-    };
-
-    state.postPage.posts.push(newPost);
-    state.postPage.newPostText = '';
-    onChange();
-}
-export type UpdateNewPostTextPropsType = {
-    updateNewPostText: (text: string) => void
-}
-export const updateNewPostText = (text: string) => {
-    state.postPage.newPostText = text;
-    onChange();
-}
-export const subscribe = (callback: ()=>void) => {
-    onChange = callback;
-}
-
-export let state: RootStateProps = {
-    dialogPage: {
-        dialogs: Dialogs,
-        messages: Messages
+export let store: StoreType = {
+    _state: {
+        dialogPage: {
+            dialogs: Dialogs,
+            messages: Messages
+        },
+        postPage: {
+            posts: PostData,
+            newPostText: '',
+        }
     },
-    postPage: {
-        posts: PostData,
-        newPostText: '',
+    getState() {
+        return this._state;
+    },
+    addPost() {
+        let newPost: PostType = {
+            id: 5,
+            message: store._state.postPage.newPostText,
+            likesCount: 0
+        };
+        this._state.postPage.posts.push(newPost);
+        this._state.postPage.newPostText = '';
+        this._callSubscriber();
+    },
+    updateNewPostText(text) {
+        this._state.postPage.newPostText = text;
+        this._callSubscriber();
+    },
+    subscribe(callback) {
+        this._callSubscriber = callback;
+    },
+    _callSubscriber() {
+        console.log("state changed.")
     }
 }
 
-export type addPostCallbackPropsType = {
-    addPostCallback: () => void
+export type StoreType = {
+    _state: RootStateProps,
+    getState: () => RootStateProps,
+    addPost: () => void,
+    updateNewPostText: (text: string) => void,
+    subscribe: (callback: () => void) => void,
+    _callSubscriber: () => void
 }
-
