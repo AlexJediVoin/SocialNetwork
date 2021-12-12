@@ -45,7 +45,14 @@ let PostData: Array<PostType> = [
     {id: 3, message: "Hi, how are you?", likesCount: 2},
     {id: 4, message: "It's my first post.", likesCount: 5}
 ]
-
+export type AddPostActionType = {
+    type: "ADD-POST",
+    postText: string
+}
+export type UpdateNewPostActionType = {
+    type: "UPDATE-NEW-POST-TEXT",
+    updateText: string
+}
 export let store: StoreType = {
     _state: {
         dialogPage: {
@@ -59,6 +66,21 @@ export let store: StoreType = {
     },
     getState() {
         return this._state;
+    },
+    dispatch (action) {
+        if (action.type === "ADD-POST") {
+            let newPost: PostType = {
+                id: 5,
+                message: action.postText,
+                likesCount: 0
+            };
+            this._state.postPage.posts.push(newPost);
+            this._state.postPage.newPostText = '';
+            this._callSubscriber();
+        } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+            this._state.postPage.newPostText = action.updateText;
+            this._callSubscriber();
+        }
     },
     addPost() {
         let newPost: PostType = {
@@ -84,9 +106,10 @@ export let store: StoreType = {
 
 export type StoreType = {
     _state: RootStateProps,
+    _callSubscriber: () => void
     getState: () => RootStateProps,
+    dispatch: (action: AddPostActionType | UpdateNewPostActionType ) => void
     addPost: () => void,
     updateNewPostText: (text: string) => void,
     subscribe: (callback: () => void) => void,
-    _callSubscriber: () => void
 }

@@ -8,21 +8,21 @@ type PropsType = {
     dialogPage: DialogPageType
 }
 
-export const Dialogs: React.FC <PropsType> = (props) => {
+export const Dialogs: React.FC<PropsType> = (props) => {
 
-    let dialogsElements = props.dialogPage.dialogs.map( d =>
-    <DialogItem key={d.id} id={d.id} name={d.name} />);
+    let dialogsElements = props.dialogPage.dialogs.map(d =>
+        <DialogItem key={d.id} id={d.id} name={d.name}/>);
 
-    let messagesElements = props.dialogPage.messages.map( m =>
-    <Message key={m.id} id={m.id} message={m.message} />);
+    let messagesElements = props.dialogPage.messages.map(m =>
+        <Message key={m.id} id={m.id} message={m.message}/>);
 
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                { dialogsElements }
+                {dialogsElements}
             </div>
             <div className={s.messages}>
-                { messagesElements }
+                {messagesElements}
             </div>
         </div>
     )
