@@ -1,3 +1,8 @@
+const ADD_POST = "ADD-POST";
+const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const SEND_MESSAGE = "ADD-POST-DIALOGS";
+const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";
+
 export type PostType = {
     id: number
     message: string
@@ -20,6 +25,7 @@ export type PostPageType = {
 export type DialogPageType = {
     dialogs: Array<DialogItemPropsType>
     messages: Array<MessageDataPropsType>
+    newMessageBody: string
 }
 
 export type RootStateProps = {
@@ -45,19 +51,34 @@ let PostData: Array<PostType> = [
     {id: 3, message: "Hi, how are you?", likesCount: 2},
     {id: 4, message: "It's my first post.", likesCount: 5}
 ]
-export type AddPostActionType = {
+export type AddPostCreatorType = {
     type: "ADD-POST",
     postText: string
 }
-export type UpdateNewPostActionType = {
+export type UpdateNewPostCreatorType = {
     type: "UPDATE-NEW-POST-TEXT",
     updateText: string
 }
+export type SendMessageCreatorType = {
+    type: "ADD-POST-DIALOGS"
+    newMessageBody: string
+}
+export type UpdateNewMessageBodyType = {
+    type: "UPDATE-NEW-MESSAGE-BODY"
+    newMessageBody: string
+}
+
+
+export type ActionsTypes =
+    AddPostCreatorType | UpdateNewPostCreatorType |
+    UpdateNewMessageBodyType | SendMessageCreatorType;
+
 export let store: StoreType = {
     _state: {
         dialogPage: {
             dialogs: Dialogs,
-            messages: Messages
+            messages: Messages,
+            newMessageBody: ""
         },
         postPage: {
             posts: PostData,
@@ -67,8 +88,8 @@ export let store: StoreType = {
     getState() {
         return this._state;
     },
-    dispatch (action) {
-        if (action.type === "ADD-POST") {
+    dispatch(action) {
+        if (action.type === ADD_POST) {
             let newPost: PostType = {
                 id: 5,
                 message: action.postText,
@@ -77,8 +98,19 @@ export let store: StoreType = {
             this._state.postPage.posts.push(newPost);
             this._state.postPage.newPostText = '';
             this._callSubscriber();
-        } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+        } else if (action.type === SEND_MESSAGE) {
+            let newPost: MessageDataPropsType = {
+                id: 5,
+                message: action.newMessageBody
+            };
+            this._state.dialogPage.messages.push(newPost);
+            this._state.dialogPage.newMessageBody = '';
+            this._callSubscriber();
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.postPage.newPostText = action.updateText;
+            this._callSubscriber();
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogPage.newMessageBody = action.newMessageBody;
             this._callSubscriber();
         }
     },
@@ -101,15 +133,39 @@ export let store: StoreType = {
     },
     _callSubscriber() {
         console.log("state changed.")
-    }
+    },
 }
 
 export type StoreType = {
-    _state: RootStateProps,
+    _state: RootStateProps
     _callSubscriber: () => void
     getState: () => RootStateProps,
-    dispatch: (action: AddPostActionType | UpdateNewPostActionType ) => void
-    addPost: () => void,
-    updateNewPostText: (text: string) => void,
-    subscribe: (callback: () => void) => void,
+    dispatch: (action: ActionsTypes) => void
+    addPost: () => void
+    updateNewPostText: (text: string) => void
+    subscribe: (callback: () => void) => void
+}
+export const addPostCreator = (postText: string): AddPostCreatorType => {
+    return {
+        type: ADD_POST,
+        postText: postText
+    }
+}
+export const sendMessageCreator = (postText: string): SendMessageCreatorType => {
+    return {
+        type: SEND_MESSAGE,
+        newMessageBody: postText
+    }
+}
+export const updateNewPostCreator = (text: string): UpdateNewPostCreatorType => {
+    return {
+        type: UPDATE_NEW_POST_TEXT,
+        updateText: text
+    }
+}
+export const updateNewMessageBodyCreator = (text: string): UpdateNewMessageBodyType => {
+    return {
+        type: UPDATE_NEW_MESSAGE_BODY,
+        newMessageBody: text
+    }
 }
