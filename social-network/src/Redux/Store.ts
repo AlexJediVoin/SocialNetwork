@@ -34,7 +34,7 @@ export type DialogPageType = {
 
 export type RootStateProps = {
     dialogPage: DialogPageType
-    postPage: PostPageType
+    profilePage: PostPageType
     sidebar: {}
 }
 
@@ -73,7 +73,6 @@ export type UpdateNewMessageBodyType = {
     newMessageBody: string
 }
 
-
 export type ActionsTypes =
     ProfilePageActionsType | DialogPageActionsType
 
@@ -84,7 +83,7 @@ export let store: StoreType = {
             messages: Messages,
             newMessageBody: ""
         },
-        postPage: {
+        profilePage: {
             posts: PostData,
             newPostText: '',
         },
@@ -94,7 +93,7 @@ export let store: StoreType = {
         return this._state;
     },
     dispatch(action) {
-        this._state.postPage = profileReducer(this._state.postPage, action);
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
         this._state.dialogPage = dialogsReducer(this._state.dialogPage, action);
         this._state.sidebar = sidebarReducer({}, action);
 
@@ -103,15 +102,15 @@ export let store: StoreType = {
     addPost() {
         let newPost: PostType = {
             id: 5,
-            message: store._state.postPage.newPostText,
+            message: store._state.profilePage.newPostText,
             likesCount: 0
         };
-        this._state.postPage.posts.push(newPost);
-        this._state.postPage.newPostText = '';
+        this._state.profilePage.posts.push(newPost);
+        this._state.profilePage.newPostText = '';
         this._callSubscriber();
     },
     updateNewPostText(text) {
-        this._state.postPage.newPostText = text;
+        this._state.profilePage.newPostText = text;
         this._callSubscriber();
     },
     subscribe(callback) {

@@ -4,14 +4,29 @@ import {
     MessageDataPropsType,
     SendMessageCreatorType,
     UpdateNewMessageBodyType
-} from "./State";
+} from "./Store";
 
 const SEND_MESSAGE = "ADD-POST-DIALOGS";
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";
 
 export type DialogPageActionsType = UpdateNewMessageBodyType | SendMessageCreatorType;
 
-const dialogsReducer = (state: DialogPageType, action: ActionsTypes) => {
+let initialState: DialogPageType = {
+    dialogs: [
+        {id: 1, name: "Dimych"},
+        {id: 2, name: "Vanya"},
+        {id: 3, name: "Valera"},
+        {id: 4, name: "Sasha"},
+    ],
+    messages: [
+        {id: 1, message: "Hi"},
+        {id: 2, message: "How are you man?"},
+        {id: 3, message: "Yo!"},
+        {id: 4, message: "Look is him xD!"},
+    ],
+    newMessageBody: ""
+}
+const dialogsReducer = (state = initialState, action: ActionsTypes) => {
     switch (action.type) {
         case SEND_MESSAGE:
             let newPost: MessageDataPropsType = {

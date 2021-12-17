@@ -5,8 +5,8 @@ import {Message} from "./Message/Message";
 import {
     ActionsTypes,
     DialogPageType
-} from "../../Redux/State";
-import {sendMessageCreator,updateNewMessageBodyCreator} from "../../Redux/dialogs-reducer"
+} from "../../Redux/Store";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../Redux/dialogs-reducer"
 
 type PropsType = {
     dialogPage: DialogPageType

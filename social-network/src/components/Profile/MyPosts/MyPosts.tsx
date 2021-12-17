@@ -4,7 +4,7 @@ import {Post} from "./Post/Post";
 import {
     ActionsTypes,
     PostPageType,
-} from "../../../Redux/State";
+} from "../../../Redux/Store";
 import {addPostCreator,updateNewPostCreator} from "../../../Redux/profile-reducer"
 
 type PropsType = {
