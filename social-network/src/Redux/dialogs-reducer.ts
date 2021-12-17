@@ -26,7 +26,7 @@ let initialState: DialogPageType = {
     ],
     newMessageBody: ""
 }
-const dialogsReducer = (state = initialState, action: ActionsTypes) => {
+const dialogsReducer = (state = initialState, action: ActionsTypes): DialogPageType => {
     switch (action.type) {
         case SEND_MESSAGE:
             let newPost: MessageDataPropsType = {

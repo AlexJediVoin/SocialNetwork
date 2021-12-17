@@ -8,15 +8,16 @@ import {BrowserRouter, Route} from "react-router-dom";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
-import {ActionsTypes, RootStateProps} from "./Redux/Store";
+import {ActionsTypes, RootStateProps, StoreType} from "./Redux/Store";
 
 export type AppPropsType = {
-    state: RootStateProps,
-    dispatch: (action: ActionsTypes) => void
+    store: StoreType
 }
-const App: React.FC<AppPropsType> = (props) => {
+const App: React.FC<AppPropsType> = ({store}) => {
 
-    const state = props.state;
+    const {_state:state,dispatch} = store;
+    // let store = props.store;
+    // const dispatch = props.store.dispatch;
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -24,9 +25,8 @@ const App: React.FC<AppPropsType> = (props) => {
                 <Navbar/>
                 <div className="app-wrapper-content">
                     <Route path={"/dialogs"} render={() => <Dialogs dialogPage={state.dialogPage}
-                                                                    dispatch={props.dispatch}/>}/>
-                    <Route path={"/profile"} render={() => <Profile profilePage={state.profilePage}
-                                                                    dispatch={props.dispatch}
+                                                                    dispatch={dispatch}/>}/>
+                    <Route path={"/profile"} render={() => <Profile store = {store}
                     />}/>
                     {/*<Route path={"/news"} component={News}/>*/}
                     {/*<Route path={"/music"} component={Music}/>*/}
