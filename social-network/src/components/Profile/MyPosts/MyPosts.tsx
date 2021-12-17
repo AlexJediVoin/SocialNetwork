@@ -2,9 +2,10 @@ import React, {ChangeEvent} from "react";
 import s from "./MyPosts.module.css";
 import {Post} from "./Post/Post";
 import {
-    ActionsTypes, addPostCreator,
-    PostPageType, updateNewPostCreator,
+    ActionsTypes,
+    PostPageType,
 } from "../../../Redux/State";
+import {addPostCreator,updateNewPostCreator} from "../../../Redux/profile-reducer"
 
 type PropsType = {
     profile: PostPageType,
