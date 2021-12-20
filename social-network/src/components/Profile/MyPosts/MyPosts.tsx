@@ -28,7 +28,7 @@ export const MyPosts: React.FC<PropsType> = (props) => {
             <h3>My posts</h3>
             <div>
                 <div>
-                    <textarea onChange={onChangeNewPostText} value={props.profile.newPostText}/>
+                    <textarea onChange={onChangeNewPostText} value={props.newPostText}/>
                 </div>
                 <div>
                     <button onClick={onAddPost}>Add post</button>

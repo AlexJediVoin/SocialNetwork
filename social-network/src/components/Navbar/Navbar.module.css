@@ -10,3 +10,9 @@
 .item a.activeLink {
     color: darkorange;
 }
+
+.active {
+    color: red;
+    background-color: blueviolet;
+    border: 1px solid green;
+}
