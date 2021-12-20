@@ -10,7 +10,9 @@ import {sendMessageCreator, updateNewMessageBodyCreator} from "../../Redux/dialo
 
 type PropsType = {
     dialogPage: DialogPageType
-    dispatch: (action: ActionsTypes) => void
+    onNewMessageChange: (text: string) => void
+    sendMessage: ()=>void
+    newMessageBody: string
 }
 
 export const Dialogs: React.FC<PropsType> = (props) => {
@@ -22,14 +24,11 @@ export const Dialogs: React.FC<PropsType> = (props) => {
         <Message key={m.id} id={m.id} message={m.message}/>);
 
     const onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        let body = e.currentTarget.value;
-        let action = updateNewMessageBodyCreator(body);
-        props.dispatch(action);
+       let body = e.currentTarget.value;
+       props.onNewMessageChange(body);
     }
     const onSendMessageClick = () => {
-        let newMessage = props.dialogPage.newMessageBody;
-        let action = sendMessageCreator(newMessage);
-        props.dispatch(action);
+        props.sendMessage()
     }
     return (
         <div>
@@ -42,7 +41,7 @@ export const Dialogs: React.FC<PropsType> = (props) => {
                     {messagesElements}
                 </div>
                 <div>
-                    <textarea onChange={onNewMessageChange} value={props.dialogPage.newMessageBody}/>
+                    <textarea onChange={onNewMessageChange} value={props.newMessageBody}/>
                 </div>
                 <div>
                     <button onClick={onSendMessageClick}>Add Message</button>
