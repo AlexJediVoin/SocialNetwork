@@ -9,7 +9,7 @@ export type AppStateType = ReturnType<RootReducerType>;
 const reducers = combineReducers({
     profilePage: profileReducer,
     dialogPage: dialogsReducer,
-    sidebar: sidebarReducer
+    sidebar: sidebarReducer,
 })
 let store = createStore(reducers);
 

@@ -24,12 +24,12 @@ const profileReducer = (state = initialState, action: ActionsTypes): PostPageTyp
             };
             state.posts.push(newPost);
             state.newPostText = '';
-            return state;
+            return {...state};
         case UPDATE_NEW_POST_TEXT:
             state.newPostText = action.updateText;
-            return state;
+            return {...state}
         default:
-            return state;
+            return {...state};
     }
 }
 export const addPostCreator = (postText: string): AddPostCreatorType => {

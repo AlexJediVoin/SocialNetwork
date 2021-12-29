@@ -1,39 +1,33 @@
 import React from "react";
 import {
-    StoreType,
+    ActionsTypes,
+    RootStateProps
 } from "../../../Redux/Store";
 import {addPostCreator,updateNewPostCreator} from "../../../Redux/profile-reducer"
 import {MyPosts} from "./MyPosts";
-import StoreContext from "../../../StoreContext";
+import {connect} from "react-redux";
+import {Dispatch} from "redux";
+import store from "../../../Redux/redux-store";
 
-
-type PropsType = {
-   store: StoreType
+const mapStateToProps = (state: RootStateProps) =>{
+    return {
+        profile: state.profilePage,
+        newPostText: state.profilePage.newPostText
+    }
 }
 
-export const MyPostsContainer= () => {
-
-    return (
-        <StoreContext.Consumer>
-            {
-            (store)=> {
-                let state = store.getState();
-                const addPost = () => {
-                    let postText = state.profilePage.newPostText;
-                    let action = addPostCreator(postText);
-                    store.dispatch(action);
-                }
-                const onPostChange = (text: string) => {
-                    let action = updateNewPostCreator(text);
-                    store.dispatch(action);
-                }
-                return <MyPosts updateNewPostText={onPostChange}
-                         addPost={addPost}
-                         profile={state.profilePage}
-                         newPostText={state.profilePage.newPostText}
-                />
-            }
+const mapDispatchToProps = (dispatch: Dispatch <ActionsTypes>) => {
+    return {
+        updateNewPostText: (text: string) => {
+            let action = updateNewPostCreator(text);
+            dispatch(action);
+        },
+        addPost: () => {
+            let postText = store.getState().profilePage.newPostText;
+            let action = addPostCreator(postText);
+            dispatch(action);
         }
-        </StoreContext.Consumer>
-    )
+    }
 }
+const MyPostsContainer = connect(mapStateToProps,mapDispatchToProps)(MyPosts);
+export default MyPostsContainer;

@@ -1,18 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import {store} from "./Redux/Store";
-import StoreContext from './StoreContext';
+import {Provider} from "react-redux";
+import store from "./Redux/redux-store";
 
-let rerenderEntireTree = () => {
-    ReactDOM.render(<React.StrictMode>
-        <StoreContext.Provider value={store}>
-            <App />
-        </StoreContext.Provider>
-        </React.StrictMode>,
-        document.getElementById('root')
-    );
-}
-rerenderEntireTree();
-store.subscribe(rerenderEntireTree);
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App/>
+    </Provider>,
+    document.getElementById('root')
+);
 

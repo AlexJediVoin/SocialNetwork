@@ -35,12 +35,12 @@ const dialogsReducer = (state = initialState, action: ActionsTypes): DialogPageT
             };
             state.messages.push(newPost);
             state.newMessageBody = '';
-            return state;
+            return {...state};
         case UPDATE_NEW_MESSAGE_BODY:
             state.newMessageBody = action.newMessageBody;
-            return state;
+            return {...state};
         default:
-            return state;
+            return {...state};
     }
 }
 export const sendMessageCreator = (postText: string): SendMessageCreatorType => {
