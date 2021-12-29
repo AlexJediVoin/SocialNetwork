@@ -27,26 +27,25 @@ let initialState: DialogPageType = {
     newMessageBody: ""
 }
 const dialogsReducer = (state = initialState, action: ActionsTypes): DialogPageType => {
+
     switch (action.type) {
-        case SEND_MESSAGE: {
+        case SEND_MESSAGE:
             let newPost: MessageDataPropsType = {
                 id: 5,
                 message: action.newMessageBody
             };
-            let copyState = {...state};
-            copyState.messages = [...state.messages];
-            copyState.dialogs = [...state.dialogs];
-            copyState.messages.push(newPost);
-            copyState.newMessageBody = '';
-            return copyState;
-        }
-        case UPDATE_NEW_MESSAGE_BODY: {
-            let copyState = {...state};
-            copyState.newMessageBody = action.newMessageBody;
-            return copyState;
-        }
+            return {
+                ...state,
+                messages: [...state.messages, newPost],
+                newMessageBody: ''
+            }
+        case UPDATE_NEW_MESSAGE_BODY:
+            return {
+                ...state,
+                newMessageBody: action.newMessageBody
+            }
         default:
-            return {...state};
+            return state;
     }
 }
 export const sendMessageCreator = (postText: string): SendMessageCreatorType => {
