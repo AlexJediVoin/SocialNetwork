@@ -1,6 +1,7 @@
 import dialogsReducer, {DialogPageActionsType} from "./dialogs-reducer";
 import profileReducer, {ProfilePageActionsType} from "./profile-reducer";
 import sidebarReducer from "./sidebar-reducer";
+import { UsersPageActionCreator } from "./users-reducer";
 
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
@@ -74,7 +75,7 @@ export type UpdateNewMessageBodyType = {
 }
 
 export type ActionsTypes =
-    ProfilePageActionsType | DialogPageActionsType
+    ProfilePageActionsType | DialogPageActionsType | UsersPageActionCreator;
 
 export let store: StoreType = {
     _state: {

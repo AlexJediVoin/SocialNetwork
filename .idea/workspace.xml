@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bff4dae-f0bb-42de-be07-ebd56f653c7d" name="Default Changelist" comment="" />
+    <list default="true" id="8bff4dae-f0bb-42de-be07-ebd56f653c7d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/social-network/src/Redux/users-reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social-network/src/components/Users/Users.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social-network/src/components/Users/Users.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social-network/src/components/Users/UsersContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/Store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/Store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/redux-store.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +42,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/social-network/src/components/Dialogs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/social-network/src/components/Users" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -42,11 +51,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\it-kamasutra\social-network\social-network\src\components\Users" />
+      <recent name="G:\it-kamasutra\social-network\social-network\src\Redux" />
       <recent name="G:\it-kamasutra\social-network\social-network\src\components\Dialogs" />
       <recent name="G:\it-kamasutra\social-network\social-network\src\components\Profile\MyPosts" />
-      <recent name="G:\it-kamasutra\social-network\social-network\src\Redux" />
       <recent name="G:\it-kamasutra\social-network\social-network\src\components\Dialogs\Message" />
-      <recent name="G:\it-kamasutra\social-network\social-network\src\components\Dialogs\DialogItem" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\it-kamasutra\social-network\social-network\src\components\Profile" />
@@ -122,6 +131,8 @@
       <workItem from="1640427932314" duration="4053000" />
       <workItem from="1640702725822" duration="1310000" />
       <workItem from="1640761740926" duration="11948000" />
+      <workItem from="1641466834391" duration="1023000" />
+      <workItem from="1641712157005" duration="7260000" />
     </task>
     <servers />
   </component>
