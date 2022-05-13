@@ -2,12 +2,12 @@ import {Dispatch} from "react";
 import {connect} from "react-redux";
 import { AppStateType } from "../../Redux/redux-store";
 import {ActionsTypes} from "../../Redux/Store";
-import {followAC, setUsersAC, unfollowAC, UsersPageType, UserType} from "../../Redux/users-reducer";
+import {followAC, setUsersAC, unfollowAC, UserType} from "../../Redux/users-reducer";
 import Users from "./Users";
 
 let mapStateToProps = (state: AppStateType) => {
     return {
-        users: state.usersPage.users
+        users: state.usersPage.users.items
     }
 }
 let mapDispatchToProps = (dispatch: Dispatch<ActionsTypes>) => {
