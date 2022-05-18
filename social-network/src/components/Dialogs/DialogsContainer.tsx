@@ -4,9 +4,10 @@ import {
 } from "../../Redux/Store";
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../Redux/dialogs-reducer"
 import {Dialogs} from "./Dialogs";
-import {connect} from "react-redux";
 import {Dispatch} from 'redux';
 import store from "../../Redux/redux-store";
+import {connect} from "react-redux";
+
 
 let mapStateToProps = (state: RootStateProps) => {
     return {
@@ -14,6 +15,7 @@ let mapStateToProps = (state: RootStateProps) => {
         newMessageBody: state.dialogPage.newMessageBody
     }
 }
+
 let mapDispatchToProps = (dispatch: Dispatch<ActionsTypes>) => {
     return {
 
