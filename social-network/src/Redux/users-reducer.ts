@@ -1,26 +1,20 @@
-import {ActionsTypes} from "./Store";
-
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET_USERS";
 
-/*type LocationType = {
-    city: string,
-    country: string
-}*/
 export type UserType = {
     id: number
     photoUrl: string
     name: string
     photos: {
-        small: null |string
+        small: null | string
         large: null | string
     },
     status: null | string
     followed: boolean
 }
 export type UsersPageType = {
-    users:{
+    users: {
         items: Array<UserType>
     }
     totalCount: number
@@ -38,69 +32,36 @@ export type SetUsersACType = {
     type: 'SET_USERS'
     users: Array<UserType>
 }
-export type UsersPageActionCreator = FollowACType | UnFollowACType | SetUsersACType;
+export type UsersPageActionType = FollowACType | UnFollowACType | SetUsersACType;
 
 let initialState: UsersPageType = {
     users:
         {
-        items: []
+            items: []
         },
     totalCount: 0,
     error: null
 };
-/* users: [
-     {
-         id: 1,
-         followed: false,
-         photoUrl: 'https://trashbox.ru/ifiles/220798_004e6a_img_20140503_122504.jpg_min1/avatarki.-1.jpg',
-         fullname: "Alexandr",
-         status: "React developer",
-         location: {city: "Orenburg", country: "Russia"}
-     },
-     {
-         id: 2,
-         followed: true,
-         photoUrl: 'https://trashbox.ru/ifiles/220798_004e6a_img_20140503_122504.jpg_min1/avatarki.-1.jpg',
-         fullname: "Dimych",
-         status: "I am boss",
-         location: {city: "Minsk", country: "Belarus"}
-     },
-     {
-         id: 3,
-         followed: true,
-         photoUrl: 'https://trashbox.ru/ifiles/220798_004e6a_img_20140503_122504.jpg_min1/avatarki.-1.jpg',
-         fullname: "Maria",
-         status: "I am a teacher",
-         location: {city: "Moskow", country: "Russia"}
-     },
-     {
-         id: 4,
-         followed: false,
-         photoUrl: 'https://trashbox.ru/ifiles/220798_004e6a_img_20140503_122504.jpg_min1/avatarki.-1.jpg',
-         fullname: "Anna",
-         status: "I am a musicant",
-         location: {city: "Ekaterinburg", country: "Russia"}
-     }
- ]*/
 
-const usersReducer = (state = initialState, action: ActionsTypes): UsersPageType => {
+const usersReducer = (state = initialState, action: UsersPageActionType): UsersPageType => {
     switch (action.type) {
         case FOLLOW:
             return {
                 ...state,
-            users:{
+                users: {
                     items: state.users.items.map(u => {
-                    if (u.id === action.userID) {
-                        return {...u, followed: true};
-                    }
-                    return u;
-                })}
+                        if (u.id === action.userID) {
+                            return {...u, followed: true};
+                        }
+                        return u;
+                    })
+                }
             }
 
         case UNFOLLOW:
             return {
                 ...state,
-                users:{
+                users: {
                     items: state.users.items.map(u => {
                         if (u.id === action.userID) {
                             return {...u, followed: false};
@@ -110,7 +71,7 @@ const usersReducer = (state = initialState, action: ActionsTypes): UsersPageType
                 }
             };
         case SET_USERS: {
-            return {...state, users:{items: [...state.users.items,...action.users]}}
+            return {...state, users: {items: [...state.users.items, ...action.users]}}
         }
         default:
             return state;

@@ -1,7 +1,20 @@
-import {ActionsTypes, AddPostCreatorType, PostPageType, PostType, UpdateNewPostCreatorType} from "./Store";
+import {PostType} from "../components/Profile/MyPosts/Post/Post";
 
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+
+type PostPageType = {
+    posts: Array<PostType>
+    newPostText: string
+}
+export type AddPostCreatorType = {
+    type: "ADD-POST",
+    postText: string
+}
+export type UpdateNewPostCreatorType = {
+    type: "UPDATE-NEW-POST-TEXT",
+    updateText: string
+}
 
 export type ProfilePageActionsType = AddPostCreatorType | UpdateNewPostCreatorType
 
@@ -14,7 +27,7 @@ let initialState: PostPageType = {
     newPostText: ''
 }
 
-const profileReducer = (state = initialState, action: ActionsTypes): PostPageType => {
+const profileReducer = (state = initialState, action: ProfilePageActionsType): PostPageType => {
     switch (action.type) {
         case "ADD-POST": {
             let newPost: PostType = {
@@ -38,12 +51,14 @@ const profileReducer = (state = initialState, action: ActionsTypes): PostPageTyp
             return state;
     }
 }
+
 export const addPostCreator = (postText: string): AddPostCreatorType => {
     return {
         type: ADD_POST,
         postText: postText
     }
 }
+
 export const updateNewPostCreator = (text: string): UpdateNewPostCreatorType => {
     return {
         type: UPDATE_NEW_POST_TEXT,

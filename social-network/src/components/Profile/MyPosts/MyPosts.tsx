@@ -1,10 +1,11 @@
 import {ChangeEvent} from "react";
 import s from "./MyPosts.module.css";
-import {Post} from "./Post/Post";
-import {
-    PostPageType
-} from "../../../Redux/Store";
+import {Post, PostType} from "./Post/Post";
 
+type PostPageType = {
+    posts: Array<PostType>
+    newPostText: string
+}
 type PropsType = {
     profile: PostPageType
     updateNewPostText: (text: string) => void

@@ -2,14 +2,12 @@ import {ChangeEvent} from "react";
 import s from './Dialogs.module.css';
 import {DialogItem} from "./DialogItem/DialogItem";
 import {Message} from "./Message/Message";
-import {
-    DialogPageType
-} from "../../Redux/Store";
+import {DialogPageType} from "../../Redux/dialogs-reducer";
 
 type PropsType = {
     dialogPage: DialogPageType
     onNewMessageChange: (text: string) => void
-    sendMessage: ()=>void
+    sendMessage: () => void
     newMessageBody: string
 }
 
@@ -22,8 +20,8 @@ export const Dialogs: React.FC<PropsType> = (props) => {
         <Message key={m.id} id={m.id} message={m.message}/>);
 
     const onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-       let body = e.currentTarget.value;
-       props.onNewMessageChange(body);
+        let body = e.currentTarget.value;
+        props.onNewMessageChange(body);
     }
     const onSendMessageClick = () => {
         props.sendMessage()
