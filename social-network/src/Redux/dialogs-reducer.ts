@@ -2,26 +2,26 @@ const SEND_MESSAGE = "ADD-POST-DIALOGS";
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";
 
 export type MessageDataType = {
-    id: number
-    message: string
-}
+    id: number,
+    message: string,
+};
 export type DialogItemType = {
-    id: number
-    name: string
-}
+    id: number,
+    name: string,
+};
 export type DialogPageType = {
-    dialogs: Array<DialogItemType>
-    messages: Array<MessageDataType>
-    newMessageBody: string
-}
+    dialogs: Array<DialogItemType>,
+    messages: Array<MessageDataType>,
+    newMessageBody: string,
+};
 export type SendMessageCreatorType = {
-    type: "ADD-POST-DIALOGS"
-    newMessageBody: string
-}
+    type: "ADD-POST-DIALOGS",
+    newMessageBody: string,
+};
 export type UpdateNewMessageBodyType = {
-    type: "UPDATE-NEW-MESSAGE-BODY"
-    newMessageBody: string
-}
+    type: "UPDATE-NEW-MESSAGE-BODY",
+    newMessageBody: string,
+};
 export type DialogPageActionsType = UpdateNewMessageBodyType | SendMessageCreatorType;
 
 let initialState: DialogPageType = {
@@ -64,14 +64,13 @@ const dialogsReducer = (state = initialState, action: DialogPageActionsType): Di
 export const sendMessageCreator = (postText: string): SendMessageCreatorType => {
     return {
         type: SEND_MESSAGE,
-        newMessageBody: postText
-    }
+        newMessageBody: postText,
+    };
 }
-
 export const updateNewMessageBodyCreator = (text: string): UpdateNewMessageBodyType => {
     return {
         type: UPDATE_NEW_MESSAGE_BODY,
-        newMessageBody: text
-    }
+        newMessageBody: text,
+    };
 }
 export default dialogsReducer;

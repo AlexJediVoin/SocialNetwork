@@ -7,25 +7,25 @@ import {Dispatch} from "redux";
 import { PostType } from "./Post/Post";
 
 type PostPageType = {
-    posts: Array<PostType>
-    newPostText: string
-}
+    posts: Array<PostType>,
+    newPostText: string,
+};
 type mapStateToPropsType = {
     profile: PostPageType,
     newPostText: string,
-}
+};
 
 type mapDispatchToPropsType = {
     updateNewPostText: (text: string)=>void,
-    addPost: () =>void
-}
-type ActionsTypes = ProfilePageActionsType
+    addPost: () =>void,
+};
+type ActionsTypes = ProfilePageActionsType;
 
 const mapStateToProps = (state: AppStateType): mapStateToPropsType =>{
     return {
         profile: state.profilePage,
-        newPostText: state.profilePage.newPostText
-    }
+        newPostText: state.profilePage.newPostText,
+    };
 }
 
 const mapDispatchToProps = (dispatch: Dispatch <ActionsTypes>): mapDispatchToPropsType => {
@@ -39,7 +39,7 @@ const mapDispatchToProps = (dispatch: Dispatch <ActionsTypes>): mapDispatchToPro
             let action = addPostCreator(postText);
             dispatch(action);
         }
-    }
+    };
 }
 const MyPostsContainer = connect<mapStateToPropsType, mapDispatchToPropsType, {}, AppStateType>(mapStateToProps,mapDispatchToProps)(MyPosts);
 export default MyPostsContainer;

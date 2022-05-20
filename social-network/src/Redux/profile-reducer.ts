@@ -4,17 +4,17 @@ const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 
 type PostPageType = {
-    posts: Array<PostType>
-    newPostText: string
-}
+    posts: Array<PostType>,
+    newPostText: string,
+};
 export type AddPostCreatorType = {
     type: "ADD-POST",
-    postText: string
-}
+    postText: string,
+};
 export type UpdateNewPostCreatorType = {
     type: "UPDATE-NEW-POST-TEXT",
-    updateText: string
-}
+    updateText: string,
+};
 
 export type ProfilePageActionsType = AddPostCreatorType | UpdateNewPostCreatorType
 
@@ -25,7 +25,7 @@ let initialState: PostPageType = {
         {id: 3, message: "Hi, how are you?", likesCount: 2},
         {id: 4, message: "It's my first post.", likesCount: 5}],
     newPostText: ''
-}
+};
 
 const profileReducer = (state = initialState, action: ProfilePageActionsType): PostPageType => {
     switch (action.type) {
@@ -55,14 +55,13 @@ const profileReducer = (state = initialState, action: ProfilePageActionsType): P
 export const addPostCreator = (postText: string): AddPostCreatorType => {
     return {
         type: ADD_POST,
-        postText: postText
-    }
+        postText: postText,
+    };
 }
-
 export const updateNewPostCreator = (text: string): UpdateNewPostCreatorType => {
     return {
         type: UPDATE_NEW_POST_TEXT,
-        updateText: text
-    }
+        updateText: text,
+    };
 }
 export default profileReducer;

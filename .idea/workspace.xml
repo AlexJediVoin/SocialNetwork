@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bff4dae-f0bb-42de-be07-ebd56f653c7d" name="Default Changelist" comment="refactoring.">
+      <change afterPath="$PROJECT_DIR$/social-network/src/assets/images/preloader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social-network/src/components/common/Prealoder/Preloader.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/Store.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/Redux/dialogs-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/dialogs-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/Redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/profile-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/sidebar-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/sidebar-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/redux-store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/Redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/users-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/components/Dialogs/DialogItem/DialogItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Dialogs/DialogItem/DialogItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/components/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Dialogs/Dialogs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Dialogs/DialogsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Dialogs/DialogsContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Dialogs/Message/Message.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Dialogs/Message/Message.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/MyPostsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/MyPostsContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/Post/Post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/Post/Post.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/components/Users/Users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Users/Users.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Users/Users.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/components/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Users/UsersContainer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +182,8 @@
       <workItem from="1652889169138" duration="102000" />
       <workItem from="1652889730368" duration="354000" />
       <workItem from="1652890132194" duration="395000" />
-      <workItem from="1652890532582" duration="3601000" />
+      <workItem from="1652890532582" duration="4285000" />
+      <workItem from="1653026157966" duration="22761000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug">
       <created>1652533205920</created>
@@ -205,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652890625438</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refactoring.">
+      <created>1652894166460</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652894166460</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

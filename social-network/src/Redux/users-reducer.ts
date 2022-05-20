@@ -1,46 +1,76 @@
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET_USERS";
+const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
+const SET_USERS_TOTAL_COUNT = "SET_USERS_TOTAL_COUNT";
+const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
 
 export type UserType = {
-    id: number
-    photoUrl: string
-    name: string
+    id: number,
+    photoUrl: string,
+    name: string,
     photos: {
-        small: null | string
+        small: null | string,
         large: null | string
     },
-    status: null | string
-    followed: boolean
-}
+    status: null | string,
+    followed: boolean,
+};
 export type UsersPageType = {
     users: {
-        items: Array<UserType>
-    }
-    totalCount: number
-    error: null
-}
+        items: Array<UserType>,
+    },
+    totalCount: number,
+    count: number,
+    page: number,
+    isFetching: boolean,
+    error: null,
+};
 export type FollowACType = {
-    type: 'FOLLOW'
-    userID: number
-}
+    type: "FOLLOW",
+    userID: number,
+};
+export type SetCurrentPageACType = {
+    type: "SET_CURRENT_PAGE",
+    page: number,
+};
 export type UnFollowACType = {
-    type: 'UNFOLLOW'
-    userID: number
-}
+    type: "UNFOLLOW",
+    userID: number,
+};
 export type SetUsersACType = {
-    type: 'SET_USERS'
-    users: Array<UserType>
-}
-export type UsersPageActionType = FollowACType | UnFollowACType | SetUsersACType;
+    type: "SET_USERS",
+    users: Array<UserType>,
+};
+export type setTotalUsersCountACType = {
+    type: "SET_USERS_TOTAL_COUNT",
+    totalUsersCount: number,
+};
+export type toggleIsFetchingACType = {
+    type: "TOGGLE_IS_FETCHING",
+    payload: {
+        isFetching: boolean,
+    },
+};
+
+export type UsersPageActionType =
+    FollowACType
+    | UnFollowACType
+    | SetUsersACType
+    | SetCurrentPageACType
+    | setTotalUsersCountACType
+    | toggleIsFetchingACType;
 
 let initialState: UsersPageType = {
     users:
         {
             items: []
         },
-    totalCount: 0,
-    error: null
+    totalCount: 30,
+    count: 5,
+    page: 2,
+    isFetching: true,
+    error: null,
 };
 
 const usersReducer = (state = initialState, action: UsersPageActionType): UsersPageType => {
@@ -71,28 +101,53 @@ const usersReducer = (state = initialState, action: UsersPageActionType): UsersP
                 }
             };
         case SET_USERS: {
-            return {...state, users: {items: [...state.users.items, ...action.users]}}
+            return {...state, users: {items: [...action.users]}};
         }
+        case SET_CURRENT_PAGE:
+            return {...state, page: action.page};
+        case SET_USERS_TOTAL_COUNT:
+            return {...state, totalCount: action.totalUsersCount};
+        case TOGGLE_IS_FETCHING:
+            return {...state, isFetching: action.payload.isFetching};
         default:
             return state;
     }
 }
-export const followAC = (userID: number): FollowACType => {
+
+export const follow = (userID: number): FollowACType => {
     return {
         type: FOLLOW,
-        userID: userID
+        userID: userID,
     }
 }
-export const unfollowAC = (userID: number): UnFollowACType => {
+export const unfollow = (userID: number): UnFollowACType => {
     return {
         type: UNFOLLOW,
-        userID: userID
-    }
+        userID: userID,
+    };
 }
-export const setUsersAC = (users: Array<UserType>): SetUsersACType => {
+export const setUsers = (users: Array<UserType>): SetUsersACType => {
     return {
         type: SET_USERS,
-        users: users
-    }
+        users: users,
+    };
+}
+export const setCurrentPage = (currentPage: number): SetCurrentPageACType => {
+    return {
+        type: SET_CURRENT_PAGE,
+        page: currentPage,
+    };
+}
+export const setTotalUsersCount = (totalUsersCount: number): setTotalUsersCountACType => {
+    return {
+        type: SET_USERS_TOTAL_COUNT,
+        totalUsersCount,
+    };
+}
+export const toggleIsFetching = (isFetching: boolean): toggleIsFetchingACType => {
+    return {
+        type: TOGGLE_IS_FETCHING,
+        payload: {isFetching},
+    };
 }
 export default usersReducer;
