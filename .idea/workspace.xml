@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bff4dae-f0bb-42de-be07-ebd56f653c7d" name="Default Changelist" comment="refactoring.">
-      <change afterPath="$PROJECT_DIR$/social-network/src/assets/images/preloader.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social-network/src/components/common/Prealoder/Preloader.tsx" afterDir="false" />
+    <list default="true" id="8bff4dae-f0bb-42de-be07-ebd56f653c7d" name="Default Changelist" comment="lessons 54-58">
+      <change afterPath="$PROJECT_DIR$/social-network/src/Redux/auth-reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social-network/src/components/Header/HeaderContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/dialogs-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/dialogs-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/Redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/profile-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/Redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/redux-store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/users-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Dialogs/DialogItem/DialogItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Dialogs/DialogItem/DialogItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Dialogs/Dialogs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/MyPostsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/MyPostsContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Users/Users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Users/Users.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Header/Header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileInfo/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileInfo/ProfileInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Users/Users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Users/UsersContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +57,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/social-network/src/components/Header" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -65,11 +66,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Study IT INCUBATOR\social-network\SocialNetwork\social-network\src\components\Header" />
+      <recent name="D:\Study IT INCUBATOR\social-network\SocialNetwork\social-network\src\Redux" />
+      <recent name="D:\Study IT INCUBATOR\social-network\SocialNetwork\social-network\src\components\Profile" />
       <recent name="G:\it-kamasutra\social-network\social-network\src\components\Users" />
       <recent name="G:\it-kamasutra\social-network\social-network\src\Redux" />
-      <recent name="G:\it-kamasutra\social-network\social-network\src\components\Dialogs" />
-      <recent name="G:\it-kamasutra\social-network\social-network\src\components\Profile\MyPosts" />
-      <recent name="G:\it-kamasutra\social-network\social-network\src\components\Dialogs\Message" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\it-kamasutra\social-network\social-network\src\components\Profile" />
@@ -183,7 +184,9 @@
       <workItem from="1652889730368" duration="354000" />
       <workItem from="1652890132194" duration="395000" />
       <workItem from="1652890532582" duration="4285000" />
-      <workItem from="1653026157966" duration="22761000" />
+      <workItem from="1653026157966" duration="23589000" />
+      <workItem from="1653114270934" duration="12774000" />
+      <workItem from="1653128525307" duration="15747000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug">
       <created>1652533205920</created>
@@ -213,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652894166460</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="lessons 54-58">
+      <created>1653071257874</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1653071257874</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,6 +245,7 @@
     <MESSAGE value="fix bug" />
     <MESSAGE value="lesson 53 - class component" />
     <MESSAGE value="refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring." />
+    <MESSAGE value="lessons 54-58" />
+    <option name="LAST_COMMIT_MESSAGE" value="lessons 54-58" />
   </component>
 </project>
