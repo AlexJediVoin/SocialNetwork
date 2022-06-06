@@ -4,7 +4,7 @@ import photoUser from "../../assets/images/user.png";
 import {UserType} from "../../Redux/users-reducer";
 import {NavLink} from "react-router-dom";
 import axios from "axios";
-import {followAPI} from "../../api/api";
+import {followAPI, ResultCodesEnum} from "../../api/api";
 
 type UsersPropsType = {
     totalCount: number,
@@ -49,7 +49,7 @@ const Users: React.FC<UsersPropsType> = (props) => {
                                 ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={(e) => {
                                     props.toggleProgressFollowing(true, u.id);
                                     followAPI.unfollowUser(u.id).then(data => {
-                                        if (data.resultCode == 0) {
+                                        if (data.resultCode === ResultCodesEnum.Sucsess) {
                                             props.unfollow(u.id)
                                         }
                                         props.toggleProgressFollowing(false, u.id);
@@ -59,7 +59,7 @@ const Users: React.FC<UsersPropsType> = (props) => {
                                 : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
                                     props.toggleProgressFollowing(true, u.id);
                                     followAPI.followUser(u.id).then(data => {
-                                        if (data.resultCode == 0) {
+                                        if (data.resultCode === ResultCodesEnum.Sucsess) {
                                             props.follow(u.id)
                                         }
                                         props.toggleProgressFollowing(false, u.id);
