@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bff4dae-f0bb-42de-be07-ebd56f653c7d" name="Default Changelist" comment="fix">
-      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/auth-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Header/HeaderContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Header/HeaderContainer.tsx" afterDir="false" />
+    <list default="true" id="8bff4dae-f0bb-42de-be07-ebd56f653c7d" name="Default Changelist" comment="lesson 62, practice follow-unfollow api.">
+      <change afterPath="$PROJECT_DIR$/social-network/src/api/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/users-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Users/Users.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/components/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Users/UsersContainer.tsx" afterDir="false" />
     </list>
@@ -16,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -178,7 +180,7 @@
       <workItem from="1653128525307" duration="17321000" />
       <workItem from="1653201198105" duration="684000" />
       <workItem from="1653487949249" duration="89000" />
-      <workItem from="1654508707853" duration="3277000" />
+      <workItem from="1654508707853" duration="18454000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug">
       <created>1652533205920</created>
@@ -229,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653146844083</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="lesson 62, practice follow-unfollow api.">
+      <created>1654512281184</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1654512281184</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +263,7 @@
     <MESSAGE value="lessons 54-58" />
     <MESSAGE value="lessons 59-61." />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="lesson 62, practice follow-unfollow api." />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson 62, practice follow-unfollow api." />
   </component>
 </project>
