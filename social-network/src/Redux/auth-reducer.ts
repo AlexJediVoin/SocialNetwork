@@ -1,3 +1,7 @@
+import {ThunkAction} from "redux-thunk";
+import {authApi, ResultCodesEnum} from "../api/api";
+import {AppStateType} from "./redux-store";
+
 const SET_USER_DATA = "SET_USER_DATA";
 
 export type AuthUserType = {
@@ -50,6 +54,17 @@ export const setAuthUserData = (id: number | null,
     return {
         type: SET_USER_DATA,
         payload: {id, email, login},
+    }
+}
+
+export const getAuthUserData = (): ThunkAction<Promise<void>, AppStateType, unknown, AuthActionType> => {
+    return (dispatch) => {
+        return authApi.me().then(response => {
+            if (response.resultCode === ResultCodesEnum.Sucsess) {
+                let {id, email, login} = response.data;
+                dispatch(setAuthUserData(id, email, login));
+            }
+        })
     }
 }
 

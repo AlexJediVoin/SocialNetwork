@@ -1,4 +1,7 @@
+import {ThunkAction} from "redux-thunk";
+import {profileAPI} from "../api/api";
 import {PostType} from "../components/Profile/MyPosts/Post/Post";
+import {AppStateType} from "./redux-store";
 
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
@@ -47,7 +50,7 @@ export type SetUserProfileType = {
 };
 export type ProfilePageActionsType = AddPostCreatorType | UpdateNewPostCreatorType | SetUserProfileType;
 
-let initialState: ProfilePageType= {
+let initialState: ProfilePageType = {
     posts: [
         {id: 1, message: "Hi, how are you?", likesCount: 2},
         {id: 2, message: "It's my first post.", likesCount: 5},
@@ -76,7 +79,7 @@ const profileReducer = (state = initialState, action: ProfilePageActionsType): P
                 newPostText: action.updateText
             };
         case SET_USER_PROFILE: {
-            return {...state,posts: [...state.posts],profile: action.payload.profile};
+            return {...state, posts: [...state.posts], profile: action.payload.profile};
         }
         default:
             return state;
@@ -95,10 +98,19 @@ export const updateNewPostCreator = (text: string): UpdateNewPostCreatorType => 
         updateText: text,
     };
 }
-export const SetUserProfile = (profile: UserProfileType): SetUserProfileType => {
+const SetUserProfile = (profile: UserProfileType): SetUserProfileType => {
     return {
         type: SET_USER_PROFILE,
-        payload:{profile},
+        payload: {profile},
     };
 }
+export const getUserProfile = (userID: string): ThunkAction<Promise<void>, AppStateType, unknown, ProfilePageActionsType> => {
+    return (dispatch) => {
+        return profileAPI.getProfile(userID).then(data => {
+            dispatch(SetUserProfile(data));
+        })
+    }
+}
+
+
 export default profileReducer;
