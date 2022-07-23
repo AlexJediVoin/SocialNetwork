@@ -27,9 +27,9 @@ export const Dialogs: React.FC<PropsType> = (props) => {
     const onSendMessageClick = () => {
         props.sendMessage()
     };
-    if (!props.isAuth) {
+  /*  if (!props.isAuth) {
         return <Redirect to={"/Login"}/>
-    }
+    }*/
     return (
         <div>
             <div className={s.dialogs}>

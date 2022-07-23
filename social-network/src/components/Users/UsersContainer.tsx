@@ -15,6 +15,9 @@ import Users from "./Users";
 import Preloader from "../common/Prealoder/Preloader";
 import {usersAPI} from "../../api/api";
 import {ThunkAction} from "redux-thunk";
+import { withRouter } from "react-router-dom";
+import { withAuthRedirect } from "../../hoc/withAuthRedirect";
+import { compose } from "redux";
 
 
 export type MapStateToPropsType = {
@@ -74,12 +77,14 @@ let mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     }
 }
 
-const UsersContainer = connect<MapStateToPropsType, MapDispatchPropsType, {}, AppStateType>(mapStateToProps,
-    {
-        setCurrentPage,
-        getUsers,
-        follow,
-        unfollow,
-    })(UsersContainerComponent);
-
-export default UsersContainer;
+export default compose<React.ComponentType>(
+    connect<MapStateToPropsType, MapDispatchPropsType, {}, AppStateType>(mapStateToProps,
+        {
+            setCurrentPage,
+            getUsers,
+            follow,
+            unfollow,
+        }),
+    withAuthRedirect
+)
+(UsersContainerComponent);

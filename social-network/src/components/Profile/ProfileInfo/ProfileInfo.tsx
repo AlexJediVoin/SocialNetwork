@@ -2,6 +2,8 @@ import React from "react";
 import s from "./ProfileInfo.module.css";
 import {UserProfileType} from "../../../Redux/profile-reducer";
 import Preloader from "../../common/Prealoder/Preloader";
+import ProfileStatus from "./ProfileStatus/ProfileStatus";
+
 
 type ProfileInfoPropsType = {
     profile: UserProfileType
@@ -19,7 +21,8 @@ export const ProfileInfo: React.FC <ProfileInfoPropsType> = (props) => {
                     alt="img-content"/>
             </div>
                 < img src={props.profile.photos.large !== null ? props.profile.photos.large : ""} alt="Фотография пользователя увеличенная"/>
-            <div className={s.descriptionBlock}> ava + description</div>
+            <ProfileStatus status={"Всё -OKK!!!"}/>
+          {/*  <div className={s.descriptionBlock}> ava + description</div>*/}
         </div>
     )
 }
