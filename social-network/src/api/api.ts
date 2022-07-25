@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import {UserProfileType} from "../Redux/profile-reducer";
 import {UserType} from "../Redux/users-reducer";
 
@@ -10,9 +10,19 @@ const instance = axios.create({
     }
 })
 
+export type PayloadUpdStatusProfileType = {
+    status: string,
+}
+
 export enum ResultCodesEnum {
     Sucsess = 0,
     Error = 1
+}
+
+export type ResponseUpdateStatusProfileType = {
+    resultCode: number,
+    messages: string[],
+    data: {},
 }
 
 export type getUsersType = {
@@ -53,6 +63,13 @@ export const followAPI = {
 export const profileAPI = {
     getProfile: (userId: string) => {
         return instance.get<UserProfileType>(`profile/${userId}`).then(response => response.data);
+    },
+    getStatus: (userId: string) => {
+        return instance.get<string>(`profile/status/${userId}`).then(response => response.data);
+    },
+    updateStatus: (status: string) => {
+        return instance.put<any, AxiosResponse<ResponseUpdateStatusProfileType>, PayloadUpdStatusProfileType>
+        (`profile/status`, {status: status}).then(response => response.data);
     },
 }
 

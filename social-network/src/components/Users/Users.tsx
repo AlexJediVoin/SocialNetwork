@@ -29,6 +29,7 @@ const Users: React.FC<UsersPropsType> = (props) => {
                 {pages.map((el, i) => <span key={i}
                                             className={props.currentPage === el ? styles.pageSelected : ""}
                                             onClick={() => {
+                                                debugger
                                                 props.onPageChanged(el)
                                             }}>{el}</span>)}
             </div>
@@ -48,11 +49,11 @@ const Users: React.FC<UsersPropsType> = (props) => {
                                 ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={(e) => {
                                     props.unfollow(u.id);
 
-                                }}> Follow </button>
+                                }}> UnFollow </button>
                                 : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
                                     props.follow(u.id);
 
-                                }}> UnFollow </button>
+                                }}> Follow </button>
                         }
                     </div>
                 </span>

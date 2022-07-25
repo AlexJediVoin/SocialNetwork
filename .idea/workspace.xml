@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bff4dae-f0bb-42de-be07-ebd56f653c7d" name="Default Changelist" comment="lessons 65-68 : theory and practice redux-thunk, &lt;Redirect/&gt;.">
-      <change afterPath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatus.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatus.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social-network/src/hoc/withAuthRedirect.tsx" afterDir="false" />
+    <list default="true" id="8bff4dae-f0bb-42de-be07-ebd56f653c7d" name="Default Changelist" comment="lessons 69-72 : theory and practice compose.">
+      <change afterPath="$PROJECT_DIR$/social-network/src/components/Login/LoginForm/LoginForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Dialogs/Dialogs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/profile-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/redux-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/api/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/components/Dialogs/DialogsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Dialogs/DialogsContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/Profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileInfo/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileInfo/ProfileInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatus.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Users/Users.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/components/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Users/UsersContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,6 +201,9 @@
       <workItem from="1654847964011" duration="15565000" />
       <workItem from="1658204245514" duration="16366000" />
       <workItem from="1658310230877" duration="50000" />
+      <workItem from="1658579373853" duration="15151000" />
+      <workItem from="1658728053408" duration="3599000" />
+      <workItem from="1658731660744" duration="2535000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug">
       <created>1652533205920</created>
@@ -273,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654864635130</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="lessons 69-72 : theory and practice compose.">
+      <created>1658579446753</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1658579446753</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,6 +318,7 @@
     <MESSAGE value="lesson 64, practice button disabled (follow/unfollow)." />
     <MESSAGE value="typing promise for API." />
     <MESSAGE value="lessons 65-68 : theory and practice redux-thunk, &lt;Redirect/&gt;." />
-    <option name="LAST_COMMIT_MESSAGE" value="lessons 65-68 : theory and practice redux-thunk, &lt;Redirect/&gt;." />
+    <MESSAGE value="lessons 69-72 : theory and practice compose." />
+    <option name="LAST_COMMIT_MESSAGE" value="lessons 69-72 : theory and practice compose." />
   </component>
 </project>

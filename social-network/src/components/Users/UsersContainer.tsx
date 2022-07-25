@@ -44,6 +44,7 @@ class UsersContainerComponent extends React.Component<PropsType, MapStateToProps
     }
 
     onPageChanged = (pageNumber: number) => {
+        this.props.setCurrentPage(pageNumber);
         this.props.getUsers(pageNumber, this.props.pageSize);
     }
 

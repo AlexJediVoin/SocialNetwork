@@ -20,8 +20,8 @@ type mapStateToPropsType = {
 }
 
 type mapDispatchToPropsType = {
-    onNewMessageChange: (body: string) => void
-    sendMessage: () => void
+    onNewMessageChange: (body: string) => void,
+    sendMessage: () => void,
 }
 
 let mapStateToProps = (state: AppStateType): mapStateToPropsType => {
