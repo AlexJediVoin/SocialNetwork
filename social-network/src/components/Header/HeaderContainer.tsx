@@ -4,14 +4,15 @@ import axios from "axios";
 import {connect} from "react-redux";
 import {AppStateType} from "../../Redux/redux-store";
 import {authApi} from "../../api/api";
-import {getAuthUserData} from "../../Redux/auth-reducer";
+import {getAuthUserData, logout} from "../../Redux/auth-reducer";
 
 type MapStateToPropsType = {
     isAuth: boolean,
     login: string | null,
 };
 type MapDispatchToPropsType = {
-    getAuthUserData: () => void
+    getAuthUserData: () => void,
+    logout: ()=>void
 };
 
 class HeaderContainer extends React.Component<MapStateToPropsType & MapDispatchToPropsType> {
@@ -20,13 +21,13 @@ class HeaderContainer extends React.Component<MapStateToPropsType & MapDispatchT
     }
 
     render() {
-        return <Header {...this.props} isAuth={this.props.isAuth} login={this.props.login}/>
+        return <Header {...this.props} isAuth={this.props.isAuth} login={this.props.login} logout={this.props.logout}/>
     }
 }
 
 let MapStateToProps = (state: AppStateType): MapStateToPropsType => ({
-    isAuth: state.auth.isAuth,
+    isAuth: state.auth.data.isAuth,
     login: state.auth.data.login
 })
 
-export default connect<MapStateToPropsType, MapDispatchToPropsType, {}, AppStateType>(MapStateToProps, {getAuthUserData})(HeaderContainer);
+export default connect<MapStateToPropsType, MapDispatchToPropsType, {}, AppStateType>(MapStateToProps, {getAuthUserData,logout})(HeaderContainer);

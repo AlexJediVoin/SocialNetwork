@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios, {AxiosResponse} from "axios";
 import {UserProfileType} from "../Redux/profile-reducer";
 import {UserType} from "../Redux/users-reducer";
 
@@ -45,6 +45,18 @@ type authMeType = {
     }
 }
 
+type loginPayloadType = {
+    email: string,
+    password: string,
+    rememberMe: boolean,
+}
+
+export type loginResponseType = {
+    resultCode: number,
+    messages: string[],
+    data: {},
+}
+
 export const usersAPI = {
     getUsers: (currentPage: number, pageSize: number) => {
         return instance.get<getUsersType>(`users?page=${currentPage}&count=${pageSize}`).then(response => response.data);
@@ -76,6 +88,16 @@ export const profileAPI = {
 export const authApi = {
     me: () => {
         return instance.get<authMeType>(`auth/me`).then(response => response.data);
+    },
+    login: (email: string, password: string, rememberMe: boolean = false) => {
+        return instance.post<any, AxiosResponse<loginResponseType>, loginPayloadType>(`auth/login`, {
+            email,
+            password,
+            rememberMe
+        }).then(response => response.data);
+    },
+    logout: () => {
+        return instance.delete(`auth/login`).then(response => response.data);
     },
 }
 

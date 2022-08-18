@@ -1,10 +1,9 @@
 import {ThunkAction} from "redux-thunk";
+import {v1} from "uuid";
 import {profileAPI} from "../api/api";
-import {PostType} from "../components/Profile/MyPosts/Post/Post";
 import {AppStateType} from "./redux-store";
 
 const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 const SET_STATUS = "SET_STATUS";
 
@@ -30,9 +29,14 @@ export type UserProfileType = null | {
     }
 };
 
+export type PostType = {
+    id: string
+    message: string
+    likesCount: number
+};
+
 export type ProfilePageType = {
     posts: Array<PostType>,
-    newPostText: string,
     status: string,
     profile: UserProfileType,
 };
@@ -47,10 +51,7 @@ export type SetStatusProfileType = {
         status: string
     }
 };
-export type UpdateNewPostCreatorType = {
-    type: "UPDATE-NEW-POST-TEXT",
-    updateText: string,
-};
+
 export type SetUserProfileType = {
     type: "SET_USER_PROFILE",
     payload: {
@@ -59,17 +60,15 @@ export type SetUserProfileType = {
 };
 export type ProfilePageActionsType =
     AddPostCreatorType
-    | UpdateNewPostCreatorType
     | SetUserProfileType
     | SetStatusProfileType;
 
 let initialState: ProfilePageType = {
     posts: [
-        {id: 1, message: "Hi, how are you?", likesCount: 2},
-        {id: 2, message: "It's my first post.", likesCount: 5},
-        {id: 3, message: "Hi, how are you?", likesCount: 2},
-        {id: 4, message: "It's my first post.", likesCount: 5}],
-    newPostText: '',
+        {id: "1", message: "Hi, how are you?", likesCount: 2},
+        {id: "2", message: "It's my first post.", likesCount: 5},
+        {id: "3", message: "Hi, how are you?", likesCount: 2},
+        {id: "4", message: "It's my first post.", likesCount: 5}],
     profile: null,
     status: "",
 };
@@ -78,19 +77,13 @@ const profileReducer = (state = initialState, action: ProfilePageActionsType): P
     switch (action.type) {
         case "ADD-POST":
             let newPost: PostType = {
-                id: 5,
+                id: v1(),
                 message: action.postText,
                 likesCount: 0
             };
             return {
                 ...state,
-                posts: [...state.posts, newPost],
-                newPostText: ''
-            };
-        case UPDATE_NEW_POST_TEXT:
-            return {
-                ...state,
-                newPostText: action.updateText
+                posts: [...state.posts, newPost]
             };
         case SET_USER_PROFILE: {
             return {...state, posts: [...state.posts], profile: action.payload.profile};
@@ -108,7 +101,7 @@ export const addPostCreator = (postText: string): AddPostCreatorType => {
     return {
         type: ADD_POST,
         postText: postText,
-    }as const;
+    } as const;
 }
 export const setStatusCreator = (status: string): SetStatusProfileType => {
     return {
@@ -117,17 +110,11 @@ export const setStatusCreator = (status: string): SetStatusProfileType => {
     } as const;
 }
 
-export const updateNewPostCreator = (text: string): UpdateNewPostCreatorType => {
-    return {
-        type: UPDATE_NEW_POST_TEXT,
-        updateText: text,
-    }as const;
-}
 const setUserProfile = (profile: UserProfileType): SetUserProfileType => {
     return {
         type: SET_USER_PROFILE,
         payload: {profile},
-    }as const;
+    } as const;
 }
 export const getUserProfile = (userID: string): ThunkAction<Promise<void>, AppStateType, unknown, ProfilePageActionsType> => {
     return (dispatch) => {

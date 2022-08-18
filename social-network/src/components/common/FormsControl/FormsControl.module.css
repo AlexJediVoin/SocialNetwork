@@ -1,0 +1,16 @@
+.form-control.error input,
+.form-control.error textarea
+{
+    border: red 2px solid;
+}
+
+.form-control.error p {
+    font-size: 14px;
+    color: red;
+}
+
+.form-summary-error {
+    border: red 1px solid;
+    padding: 5px;
+    color: crimson;
+}

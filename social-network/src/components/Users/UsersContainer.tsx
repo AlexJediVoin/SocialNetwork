@@ -7,15 +7,10 @@ import {
     SetCurrentPageACType,
     getUsers,
     unfollow,
-
 } from "../../Redux/users-reducer";
 import {connect} from "react-redux";
-import axios from "axios";
 import Users from "./Users";
 import Preloader from "../common/Prealoder/Preloader";
-import {usersAPI} from "../../api/api";
-import {ThunkAction} from "redux-thunk";
-import { withRouter } from "react-router-dom";
 import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 import { compose } from "redux";
 
