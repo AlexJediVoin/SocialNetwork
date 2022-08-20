@@ -1,68 +1,60 @@
 import {FormAction, stopSubmit} from "redux-form";
 import {ThunkAction} from "redux-thunk";
 import {authApi, loginResponseType, ResultCodesEnum} from "../api/api";
-import {AppStateType} from "./redux-store";
+import { getAuthUserData } from "./auth-reducer";
+import {AppActionType, AppStateType, AppThunk} from "./redux-store";
 
-const SET_USER_DATA = "SET_USER_DATA";
+const INITIALUZED_SUCCESS = "INITIALUZED_SUCCESS";
 
-export type AuthUserType = {
-    resultCode: number,
-    messages: string[],
-    data: {
-        id: number | null,
-        email: string | null,
-        login: string | null,
-        isAuth: boolean,
-    },
-    isFetching: boolean,
-};
+export type initialuzedSuccessACType = {
+    type: "INITIALUZED_SUCCESS"
+}
 
-export type setUserDataACType = {
-    type: "SET_USER_DATA",
-    payload: {
-        userId: number | null,
-        email: string | null,
-        login: string | null,
-        isAuth: boolean,
-    },
-};
+export type appReducerActionType = FormAction | initialuzedSuccessACType;
 
-export type AuthActionType = setUserDataACType | FormAction;
+type stateType = {
+    initialuzed: boolean
+}
 
-let initialState: AuthUserType = {
-    resultCode: 0,
-    messages: ["Пользователь не авторизован"],
-    data: {
-        id: 0,
-        email: "",
-        login: "Не авторизованный пользователь",
-        isAuth: false,
-    },
-    isFetching: true,
-};
+let initialState = {
+    initialuzed: false
+}
 
-
-const authReducer = (state = initialState, action: AuthActionType): AuthUserType => {
+const appReducer = (state = initialState, action: appReducerActionType): stateType => {
     switch (action.type) {
-        case "SET_USER_DATA":
+        case "INITIALUZED_SUCCESS":
             return {
                 ...state,
-                data:{...action.payload}
+                initialuzed: true
             }
-        default:
-            return state;
+        default: return state;
     }
 }
 
+export const initialuzedSuccess = (): initialuzedSuccessACType => {
+    return {
+        type: INITIALUZED_SUCCESS,
+    }
+}
 
-export const setAuthUserData = (userId: number | null, email: string | null, login: string| null, isAuth: boolean) => {
+/*export const setAuthUserData = (userId: number, email: string, login: string, isAuth: boolean) => {
     return ({
         type: SET_USER_DATA,
         payload: {userId,email,login,isAuth}
     })
-}
+}*/
 
-export const getAuthUserData = (): ThunkAction<Promise<void>, AppStateType, unknown, AuthActionType> => {
+export const initializeApp = ():AppThunk =>
+    dispatch => {
+        let promise = dispatch(getAuthUserData());
+
+        Promise.all([promise]).then(()=>{
+            dispatch(initialuzedSuccess());
+        })
+    }
+
+
+/*export const getAuthUserData = (): ThunkAction<Promise<void>, AppStateType, unknown, AuthActionType> => {
     return (dispatch) => {
         return authApi.me().then(response => {
             if (response.resultCode === ResultCodesEnum.Sucsess) {
@@ -71,8 +63,9 @@ export const getAuthUserData = (): ThunkAction<Promise<void>, AppStateType, unkn
             }
         })
     }
-}
+}*/
 
+/*
 export const login = (email: string, password: string, rememberMe: boolean): ThunkAction<Promise<void>, AppStateType, unknown, AuthActionType> => {
     return (dispatch) => {
         return authApi.login(email, password, rememberMe).then(response => {
@@ -95,5 +88,6 @@ export const logout = (): ThunkAction<Promise<void>, AppStateType, unknown, Auth
         })
     }
 }
+*/
 
-export default authReducer;
+export default appReducer;

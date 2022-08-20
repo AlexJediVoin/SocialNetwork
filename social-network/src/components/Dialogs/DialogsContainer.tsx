@@ -5,9 +5,9 @@ import {
 } from "../../Redux/dialogs-reducer"
 import {Dialogs} from "./Dialogs";
 import {compose, Dispatch} from 'redux';
-import {AppStateType} from "../../Redux/redux-store";
 import {connect} from "react-redux";
 import { withAuthRedirect } from "../../hoc/withAuthRedirect";
+import { AppStateType } from "../../Redux/redux-store";
 
 type ActionsTypes = DialogPageActionsType;
 

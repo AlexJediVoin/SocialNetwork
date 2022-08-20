@@ -1,29 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bff4dae-f0bb-42de-be07-ebd56f653c7d" name="Default Changelist" comment="lessons 73-75 : use library redux-form.">
-      <change afterPath="$PROJECT_DIR$/social-network/src/components/common/FormsControl/FormsControl.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social-network/src/components/common/FormsControl/FormsControl.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social-network/src/utils/validators/validators.ts" afterDir="false" />
+    <list default="true" id="8bff4dae-f0bb-42de-be07-ebd56f653c7d" name="Default Changelist" comment="lessons 76-79 : created redux-form field validation, login и logout api, stopSubmit (redux-form).">
+      <change afterPath="$PROJECT_DIR$/social-network/src/Redux/app-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/Redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/auth-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/dialogs-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/dialogs-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/profile-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/api/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Dialogs/Dialogs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/redux-store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/components/Dialogs/DialogsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Dialogs/DialogsContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/components/Header/HeaderContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Header/HeaderContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Login/LoginForm/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Login/LoginForm/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/MyPostsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/MyPostsContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/Post/Post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/MyPosts/Post/Post.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Users/UsersContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/hoc/withAuthRedirect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/hoc/withAuthRedirect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +54,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/social-network/src/components/common/FormsControl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/social-network/src/Redux" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
@@ -76,10 +63,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Study IT INCUBATOR\social-network\SocialNetwork\social-network\src\Redux" />
       <recent name="D:\Study IT INCUBATOR\social-network\SocialNetwork\social-network\src\components\common\FormsControl" />
       <recent name="D:\Study IT INCUBATOR\social-network\SocialNetwork\social-network\src\components\Profile\ProfileInfo\ProfileStatus" />
       <recent name="D:\Study IT INCUBATOR\social-network\SocialNetwork\social-network\src\components\Header" />
-      <recent name="D:\Study IT INCUBATOR\social-network\SocialNetwork\social-network\src\Redux" />
       <recent name="D:\Study IT INCUBATOR\social-network\SocialNetwork\social-network\src\components\Profile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -216,7 +203,8 @@
       <workItem from="1659096587545" duration="670000" />
       <workItem from="1659597354841" duration="43000" />
       <workItem from="1660654504830" duration="1626000" />
-      <workItem from="1660804804937" duration="17949000" />
+      <workItem from="1660804804937" duration="18238000" />
+      <workItem from="1660987565959" duration="14468000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug">
       <created>1652533205920</created>
@@ -309,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658762732634</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="lessons 76-79 : created redux-form field validation, login и logout api, stopSubmit (redux-form).">
+      <created>1660834597757</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1660834597757</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,6 +335,7 @@
     <MESSAGE value="lessons 65-68 : theory and practice redux-thunk, &lt;Redirect/&gt;." />
     <MESSAGE value="lessons 69-72 : theory and practice compose." />
     <MESSAGE value="lessons 73-75 : use library redux-form." />
-    <option name="LAST_COMMIT_MESSAGE" value="lessons 73-75 : use library redux-form." />
+    <MESSAGE value="lessons 76-79 : created redux-form field validation, login и logout api, stopSubmit (redux-form)." />
+    <option name="LAST_COMMIT_MESSAGE" value="lessons 76-79 : created redux-form field validation, login и logout api, stopSubmit (redux-form)." />
   </component>
 </project>
