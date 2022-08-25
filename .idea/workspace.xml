@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bff4dae-f0bb-42de-be07-ebd56f653c7d" name="Default Changelist" comment="lessons 80 : initialized app.">
-      <change afterPath="$PROJECT_DIR$/social-network/src/Redux/users-selectors.ts" afterDir="false" />
+    <list default="true" id="8bff4dae-f0bb-42de-be07-ebd56f653c7d" name="Default Changelist" comment="lessons 81-82 : reselect part 1-2.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/auth-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/users-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Users/UsersContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/hoc/withAuthRedirect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/hoc/withAuthRedirect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/users-selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/users-selectors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +201,7 @@
       <workItem from="1660804804937" duration="18238000" />
       <workItem from="1660987565959" duration="15431000" />
       <workItem from="1661337199698" duration="851000" />
-      <workItem from="1661411353105" duration="8769000" />
+      <workItem from="1661411353105" duration="10589000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug">
       <created>1652533205920</created>
@@ -311,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661007038901</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="lessons 81-82 : reselect part 1-2.">
+      <created>1661423657751</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1661423657752</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,6 +348,7 @@
     <MESSAGE value="lessons 73-75 : use library redux-form." />
     <MESSAGE value="lessons 76-79 : created redux-form field validation, login и logout api, stopSubmit (redux-form)." />
     <MESSAGE value="lessons 80 : initialized app." />
-    <option name="LAST_COMMIT_MESSAGE" value="lessons 80 : initialized app." />
+    <MESSAGE value="lessons 81-82 : reselect part 1-2." />
+    <option name="LAST_COMMIT_MESSAGE" value="lessons 81-82 : reselect part 1-2." />
   </component>
 </project>
