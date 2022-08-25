@@ -9,7 +9,7 @@ export type AuthUserType = {
     resultCode: number,
     messages: string[],
     data: {
-        id: number | null,
+        userId: number | null,
         email: string | null,
         login: string | null,
         isAuth: boolean,
@@ -33,7 +33,7 @@ let initialState: AuthUserType = {
     resultCode: 0,
     messages: ["Пользователь не авторизован"],
     data: {
-        id: 0,
+        userId: 0,
         email: "",
         login: "Не авторизованный пользователь",
         isAuth: false,
@@ -66,8 +66,8 @@ export const getAuthUserData = (): ThunkAction<Promise<void>, AppStateType, unkn
     return (dispatch) => {
         return authApi.me().then(response => {
             if (response.resultCode === ResultCodesEnum.Sucsess) {
-                let {id, email, login} = response.data;
-                dispatch(setAuthUserData(id, email, login, true));
+                let {id: userId, email, login} = response.data;
+                dispatch(setAuthUserData(userId, email, login, true));
             }
         })
     }
