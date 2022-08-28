@@ -1,3 +1,4 @@
+import React from "react";
 import {Field, InjectedFormProps, reduxForm} from "redux-form";
 import {PostType} from "../../../Redux/profile-reducer";
 import {maxLenghtCreator, required} from "../../../utils/validators/validators";
@@ -20,7 +21,8 @@ export type FormDataType = {
 
 const maxLenght10 = maxLenghtCreator(10);
 
-export const MyPosts: React.FC<PropsType> = (props) => {
+export const MyPosts = React.memo((props:PropsType) => {
+    console.log("RENDER MYPOST");
     let postsElements = props.profile.posts.map(p => <Post key={p.id} id={p.id} message={p.message}
                                                            likesCount={p.likesCount}/>)
     const onAddPost = (values: FormDataType) => {
@@ -39,7 +41,7 @@ export const MyPosts: React.FC<PropsType> = (props) => {
             </div>
         </div>
     )
-}
+})
 
 const MyPostForm: React.FC<InjectedFormProps<FormDataType>> = (props) => {
     return <form onSubmit={props.handleSubmit}>

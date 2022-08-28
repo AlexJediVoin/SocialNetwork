@@ -37,13 +37,6 @@ export const initialuzedSuccess = (): initialuzedSuccessACType => {
     }
 }
 
-/*export const setAuthUserData = (userId: number, email: string, login: string, isAuth: boolean) => {
-    return ({
-        type: SET_USER_DATA,
-        payload: {userId,email,login,isAuth}
-    })
-}*/
-
 export const initializeApp = ():AppThunk =>
     dispatch => {
         let promise = dispatch(getAuthUserData());
@@ -52,42 +45,5 @@ export const initializeApp = ():AppThunk =>
             dispatch(initialuzedSuccess());
         })
     }
-
-
-/*export const getAuthUserData = (): ThunkAction<Promise<void>, AppStateType, unknown, AuthActionType> => {
-    return (dispatch) => {
-        return authApi.me().then(response => {
-            if (response.resultCode === ResultCodesEnum.Sucsess) {
-                let {id, email, login} = response.data;
-                dispatch(setAuthUserData(id, email, login, true));
-            }
-        })
-    }
-}*/
-
-/*
-export const login = (email: string, password: string, rememberMe: boolean): ThunkAction<Promise<void>, AppStateType, unknown, AuthActionType> => {
-    return (dispatch) => {
-        return authApi.login(email, password, rememberMe).then(response => {
-            if (response.resultCode === ResultCodesEnum.Sucsess) {
-                dispatch(getAuthUserData());
-            } else {
-                let message = response.messages.length > 0 ? response.messages[0] : "Some error!";
-                dispatch(stopSubmit("login", {_error: message}));
-            }
-        })
-    }
-}
-
-export const logout = (): ThunkAction<Promise<void>, AppStateType, unknown, AuthActionType> => {
-    return (dispatch) => {
-        return authApi.logout().then(response => {
-            if (response.resultCode === ResultCodesEnum.Sucsess) {
-                dispatch(setAuthUserData(null, null, null, false));
-            }
-        })
-    }
-}
-*/
 
 export default appReducer;

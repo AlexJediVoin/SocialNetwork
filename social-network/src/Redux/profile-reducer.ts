@@ -6,6 +6,7 @@ import {AppStateType} from "./redux-store";
 const ADD_POST = "ADD-POST";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 const SET_STATUS = "SET_STATUS";
+const DELETE_POST = "DELETE-POST";
 
 export type UserProfileType = null | {
     userId: number,
@@ -45,6 +46,13 @@ export type AddPostCreatorType = {
     postText: string,
 };
 
+export type DeletePostACType = {
+    type: "DELETE-POST",
+    payload: {
+        postId: string
+    }
+};
+
 export type SetStatusProfileType = {
     type: "SET_STATUS",
     payload: {
@@ -61,7 +69,8 @@ export type SetUserProfileType = {
 export type ProfilePageActionsType =
     AddPostCreatorType
     | SetUserProfileType
-    | SetStatusProfileType;
+    | SetStatusProfileType
+    | DeletePostACType;
 
 let initialState: ProfilePageType = {
     posts: [
@@ -77,7 +86,7 @@ const profileReducer = (state = initialState, action: ProfilePageActionsType): P
     switch (action.type) {
         case "ADD-POST":
             let newPost: PostType = {
-                id: v1(),
+                id: "5",
                 message: action.postText,
                 likesCount: 0
             };
@@ -92,6 +101,12 @@ const profileReducer = (state = initialState, action: ProfilePageActionsType): P
         case SET_STATUS: {
             return {...state, status: action.payload.status};
         }
+        case "DELETE-POST":{
+           return {
+               ...state,
+               posts: state.posts.filter(p=> p.id != action.payload.postId)
+           }
+        }
         default:
             return state;
     }
@@ -103,6 +118,13 @@ export const addPostCreator = (postText: string): AddPostCreatorType => {
         postText: postText,
     } as const;
 }
+
+export const deletePostCreator = (postId: string): DeletePostACType => {
+    return {
+        type: DELETE_POST,
+        payload:{postId},
+    } as const;
+}
 export const setStatusCreator = (status: string): SetStatusProfileType => {
     return {
         type: "SET_STATUS",
@@ -110,7 +132,7 @@ export const setStatusCreator = (status: string): SetStatusProfileType => {
     } as const;
 }
 
-const setUserProfile = (profile: UserProfileType): SetUserProfileType => {
+export const setUserProfile = (profile: UserProfileType): SetUserProfileType => {
     return {
         type: SET_USER_PROFILE,
         payload: {profile},
