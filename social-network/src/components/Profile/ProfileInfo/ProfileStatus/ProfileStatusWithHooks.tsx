@@ -1,16 +1,10 @@
 import React, {ChangeEvent} from "react";
-import Preloader from "../../../common/Prealoder/Preloader";
 import {useState} from "react";
 import {useEffect} from "react";
 
 type PropsType = {
     status: string,
     updateStatus: (newStatus: string) => void,
-}
-
-type StateType = {
-    editeMode: boolean,
-    status: string,
 }
 
 const ProfileStatusWithHooks: React.FC<PropsType> = (props) => {

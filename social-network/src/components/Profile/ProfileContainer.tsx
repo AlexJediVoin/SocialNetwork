@@ -1,12 +1,10 @@
 import React from "react";
 import {Profile} from "./Profile";
-import axios from "axios";
 import {connect} from "react-redux";
 import {getStatusProfile, getUserProfile, updateStatusProfile, UserProfileType} from "../../Redux/profile-reducer";
 import {AppStateType} from "../../Redux/redux-store";
-import {Redirect, withRouter} from "react-router";
+import {withRouter} from "react-router";
 import {RouteComponentProps} from "react-router/ts4.0";
-import {profileAPI} from "../../api/api";
 import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 import { compose } from "redux";
 
@@ -30,7 +28,6 @@ class ProfileContainer extends React.Component<CommonPropsType> {
 
     componentDidMount() {
         let userId = this.props.match.params.userId;
-        console.log('props', this.props)
 
         if (!userId && this.props.authorizedUserId && this.props.isLogin) {
             userId = `${this.props.authorizedUserId}`;

@@ -1,10 +1,7 @@
 import React from "react";
-import s from "./ProfileInfo.module.css";
 import {UserProfileType} from "../../../Redux/profile-reducer";
 import Preloader from "../../common/Prealoder/Preloader";
-import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
-
 
 type ProfileInfoPropsType = {
     profile: UserProfileType,
@@ -12,8 +9,8 @@ type ProfileInfoPropsType = {
     updateStatus: (userID: string) => void,
 }
 
-export const ProfileInfo: React.FC <ProfileInfoPropsType> = (props) => {
-    if (!props.profile) {
+export const ProfileInfo: React.FC <ProfileInfoPropsType> = ({profile,status,updateStatus}) => {
+    if (!profile) {
         return <Preloader/>
     }
     return (
@@ -23,8 +20,8 @@ export const ProfileInfo: React.FC <ProfileInfoPropsType> = (props) => {
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6r0BJokCLDfJfqE8rlDmhQzHI-81mL6h07Q&usqp=CAU"
                     alt="img-content"/>
             </div>
-                < img src={props.profile.photos.large !== null ? props.profile.photos.large : ""} alt="Фотография пользователя увеличенная"/>
-            <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+                < img src={profile.photos.large !== null ? profile.photos.large : ""} alt="Фотография пользователя увеличенная"/>
+            <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
           {/*  <div className={s.descriptionBlock}> ava + description</div>*/}
         </div>
     )

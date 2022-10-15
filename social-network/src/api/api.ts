@@ -30,7 +30,7 @@ export type getUsersType = {
     totalCount: number,
     error: string
 }
-type followAPIUserType = {
+export type followAPIUserType = {
     resultCode: ResultCodesEnum
     messages: string[],
     data: {}

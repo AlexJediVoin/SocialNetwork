@@ -1,17 +1,12 @@
 import './App.css';
 import {Navbar} from "./components/Navbar/Navbar";
 import {
-    BrowserRouter,
     Switch,
     Route,
     withRouter,
 } from "react-router-dom";
 import * as React from 'react';
-/*import {News} from "./components/News/News";
-import {Music} from "./components/Music/Music";
-import {Settings} from "./components/Settings/Settings";*/
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
-/*import Users from './components/Users/Users';*/
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from "./components/Header/HeaderContainer";
@@ -30,7 +25,6 @@ type MapDispatchToPropsType = {
 type MapStateToPropsType ={
     initialized: boolean;
 }
-
 
 class App extends React.Component<MapDispatchToPropsType> {
     componentDidMount() {
@@ -54,9 +48,6 @@ class App extends React.Component<MapDispatchToPropsType> {
                             <Route path={"/users"} render={() => <UsersContainer/>}/>
                             <Route path={"/login"} render={() => <LoginPage/>}/>
                         </Switch>
-                        {/*<Route path={"/news"} component={News}/>*/}
-                        {/*<Route path={"/music"} component={Music}/>*/}
-                        {/*<Route path={"/settings"} component={Settings}/>*/}
                     </div>
                 </div>
         );
