@@ -4,6 +4,7 @@ import {
     Switch,
     Route,
     withRouter,
+    BrowserRouter,
 } from "react-router-dom";
 import * as React from 'react';
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
@@ -11,8 +12,8 @@ import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginPage from './components/Login/Login';
-import { connect } from 'react-redux';
-import { AppStateType } from './Redux/redux-store';
+import { connect, Provider } from 'react-redux';
+import store, { AppStateType } from './Redux/redux-store';
 import { initializeApp } from './Redux/app-reducer';
 import { compose } from 'redux';
 import {ComponentType} from "react";
@@ -59,6 +60,16 @@ const MapStateToProps = (state: AppStateType): MapStateToPropsType =>{
         initialized: state.app.initialuzed
     }
 }
-export default compose<ComponentType> (
+let AppContainer = compose<ComponentType> (
     withRouter,
     connect<MapStateToPropsType, MapDispatchToPropsType, {}, AppStateType>(MapStateToProps, {initializeApp}))(App);
+
+const SamuraiJsApp = () => {
+    return <Provider store={store}>
+        <BrowserRouter>
+            <AppContainer/>
+        </BrowserRouter>
+    </Provider>
+}
+
+export default SamuraiJsApp;

@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bff4dae-f0bb-42de-be07-ebd56f653c7d" name="Default Changelist" comment="lessons 86-89 : Virtual DOM, React.Memo, created tests on profile-reducer.">
-      <change afterPath="$PROJECT_DIR$/social-network/src/components/Users/User.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social-network/src/components/common/Paginator/Paginator.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social-network/src/components/common/Paginator/Paginator.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social-network/src/utils/object-helpers.ts" afterDir="false" />
+    <list default="true" id="8bff4dae-f0bb-42de-be07-ebd56f653c7d" name="Default Changelist" comment="lessons 90 : refactoring.">
+      <change afterPath="$PROJECT_DIR$/social-network/src/App.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatus.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-network/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/app-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/auth-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/profile-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/users-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/api/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Header/HeaderContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Header/HeaderContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Login/LoginForm/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Login/LoginForm/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileInfo/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileInfo/ProfileInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatusWithHooks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatusWithHooks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Users/Users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Users/Users.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Users/Users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/Users/UsersContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-network/src/components/common/FormsControl/FormsControl.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/components/common/FormsControl/FormsControl.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/Redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/Redux/redux-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-network/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/social-network/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +53,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/social-network/src/components/Users" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/social-network/src/components/Profile/ProfileInfo/ProfileStatus" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
@@ -75,9 +62,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Study IT INCUBATOR\social-network\SocialNetwork\social-network\src\components\Profile\ProfileInfo\ProfileStatus" />
       <recent name="D:\Study IT INCUBATOR\social-network\SocialNetwork\social-network\src\components\Users" />
       <recent name="D:\Study IT INCUBATOR\social-network\SocialNetwork\social-network\src\Redux" />
-      <recent name="D:\Study IT INCUBATOR\social-network\SocialNetwork\social-network\src\components\Profile\ProfileInfo\ProfileStatus" />
       <recent name="D:\Study IT INCUBATOR\social-network\SocialNetwork\social-network\src\components\common\FormsControl" />
       <recent name="D:\Study IT INCUBATOR\social-network\SocialNetwork\social-network\src\components\Header" />
     </key>
@@ -137,9 +124,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.test" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.deploy" />
-        <item itemvalue="npm.test" />
         <item itemvalue="npm.predeploy" />
       </list>
     </recent_temporary>
@@ -236,7 +223,8 @@
       <workItem from="1661678812551" duration="705000" />
       <workItem from="1661679545670" duration="6624000" />
       <workItem from="1661751250136" duration="601000" />
-      <workItem from="1665823066231" duration="22185000" />
+      <workItem from="1665823066231" duration="23048000" />
+      <workItem from="1665902356751" duration="12964000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug">
       <created>1652533205920</created>
@@ -371,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661687824195</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="lessons 90 : refactoring.">
+      <created>1665846390880</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1665846390880</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,6 +403,7 @@
     <MESSAGE value="lessons 83 : connect reselect part 3." />
     <MESSAGE value="lessons 84-85 : hooks useState and useEffect." />
     <MESSAGE value="lessons 86-89 : Virtual DOM, React.Memo, created tests on profile-reducer." />
-    <option name="LAST_COMMIT_MESSAGE" value="lessons 86-89 : Virtual DOM, React.Memo, created tests on profile-reducer." />
+    <MESSAGE value="lessons 90 : refactoring." />
+    <option name="LAST_COMMIT_MESSAGE" value="lessons 90 : refactoring." />
   </component>
 </project>
