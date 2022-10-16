@@ -16,11 +16,11 @@ type UsersPropsType = {
 const Users: React.FC<UsersPropsType> = ({currentPage, pageSize, totalCount, onPageChanged, users, ...props}) => {
     return (
         <div>
-            {/*<span>{totalCount}</span>*/}
             <Paginator currentPage={currentPage}
                        pageSize={pageSize}
                        totalCount={totalCount}
                        onPageChanged={onPageChanged}
+                       portionSize={10}
             />
 
             {
